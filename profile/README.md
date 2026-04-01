@@ -27,4 +27,4 @@ Python · GPBoost · LightGBM · scikit-learn · 465 tests · GitHub Actions CI
 
 ---
 
-**Built by [Ethan Yang](https://github.com/YichengYang0405)** — UIUC CS+Econ+Stats, Quantitative Researcher at Square Kettle LLC.
+**Built by Ethan Yang** — UIUC CS+Econ+Stats, Quantitative Researcher at Square Kettle LLC.
