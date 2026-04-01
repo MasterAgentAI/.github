@@ -1,35 +1,41 @@
 # Master Agent AI
 
-**Open-source, AI-powered tools for MFE & quant finance graduate admissions.**
+**Data-driven graduate admission tools. Replacing consultants with algorithms.**
 
-We build intelligent agents and data-driven toolkits that help applicants navigate the competitive landscape of Masters in Financial Engineering programs — from profile evaluation to essay coaching to interview prep.
+## QuantPath
 
-## Projects
+Our flagship project — an MFE admission prediction engine with 12,800+ records, 34 programs, and a GPBoost mixed-effects model.
 
-| Project | Description | Status |
-|---------|-------------|--------|
-| [**QuantPath**](https://github.com/MasterAgentAI/QuantPath) | Core evaluation engine — 5-dimension profile scoring, prerequisite matching, school ranking (reach/target/safety), GRE/TOEFL requirements, application timelines | **Active** |
-| **MFE-Data** | Comprehensive program database — admissions stats, prerequisites, deadlines, rankings | Planned |
-| **Essay-Coach** | AI agent for personal statement and essay guidance | Planned |
-| **Interview-Prep** | Mock interview system with quant, behavioral, and brainteaser question banks | Planned |
-| **Course-Planner** | Gap analysis → optimal course selection engine | Planned |
-| **Admit-Predict** | ML-based admission probability model trained on historical data | Planned |
+| Capability | Description |
+|-----------|-------------|
+| **Admission Prediction** | GPBoost model (AUC 0.716) with per-program random intercepts and bias correction |
+| **Profile Scoring** | 5-dimension evaluation across 37 sub-factors (Math, Stats, CS, Finance, GPA) |
+| **School Ranking** | Reach/target/safety classification with P(admit) confidence intervals |
+| **Prerequisite Matching** | Course-by-course comparison against 28 program requirements |
+| **Gap Analysis** | Priority-ranked gaps with specific action recommendations |
+| **Course Optimization** | 37 course categories including reinforcement learning |
 
-## Why Master Agent?
+### Data
 
-Applying to top MFE programs is opaque and stressful. Acceptance rates are 5-15%, prerequisites vary wildly across programs, and there's no single source of truth. We're building the toolkit we wish we had — transparent, data-driven, and open source.
+| Dataset | Records |
+|---------|---------|
+| Admission records | 12,800+ (GradCafe, QuantNet, Reddit, 1point3acres) |
+| LinkedIn alumni profiles | 930 (20 MFE programs, employer + undergrad data) |
+| Program database | 28 (QuantNet 2026 rankings, prerequisites, salaries) |
+| Trained models | GPBoost v2 (13 features) + LR v1 (21 per-program models) |
 
-## Get Started
+### Quick Start
 
 ```bash
-pip install quantpath
-quantpath evaluate --profile your_profile.yaml
+git clone https://github.com/MasterAgentAI/QuantPath.git
+cd QuantPath && pip install -e .
+quantpath evaluate --profile examples/sample_profile.yaml
 ```
 
-## Contributing
+### Tech
 
-We welcome contributions! Check individual project repos for issues and roadmaps.
+Python · GPBoost · LightGBM · scikit-learn · 465 tests · GitHub Actions CI
 
-## Contact
+---
 
-Questions or ideas? Open an issue or reach out at yy85@illinois.edu.
+**Built by [Ethan Yang](https://github.com/YichengYang0405)** — UIUC CS+Econ+Stats, Quantitative Researcher at Square Kettle LLC.
